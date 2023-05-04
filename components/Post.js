@@ -41,8 +41,8 @@ export default function Post (props) {
             <a href={BLOG.socialLink || '#'} className="flex">
               <Image
                 alt={BLOG.author}
-                width={24}
-                height={24}
+                width={30}
+                height={30}
                 src={`https://gravatar.com/avatar/${emailHash}`}
                 className="rounded-full"
               />

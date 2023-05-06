@@ -22,7 +22,7 @@ const NavBar = () => {
             link.show && (
               <li
                 key={link.id}
-                className="px-4 py-2 block ml-4 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:opacity-70 hover:shadow-lg dark:text-gray-50 nav"
+                className="px-2 py-2 block ml-4 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:opacity-70 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
               >
                 <Link href={link.to} target={link.external ? '_blank' : null}>{link.name}</Link>
               </li>

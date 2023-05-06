@@ -54,7 +54,7 @@ export default function Post (props) {
             <FormattedDate date={post.date} />
           </div>
           {post.tags && (
-            <div className="flex flex-nowrap max-w-full px-1 py-4 overflow-x-auto article-tags">
+            <div className="flex flex-nowrap max-w-full px-1 pb-4 overflow-x-auto article-tags">
               {post.tags.map(tag => (
                 <TagItem key={tag} tag={tag} />
               ))}

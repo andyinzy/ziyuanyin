@@ -31,6 +31,11 @@ export default function TableOfContents ({ blockMap, className, style }) {
       style={style}
     >
       {nodes.map(node => (
+        <div>
+          <p class="text-center font-black text-black block py-1 hover:text-black dark:text-white cursor-default">
+            目录 {/* 改进：双语、和id绑定 */}
+          </p>
+        </div>,
         <div key={node.id}>
           <a
             data-target-id={node.id}

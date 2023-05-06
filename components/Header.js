@@ -22,7 +22,7 @@ const NavBar = () => {
             link.show && (
               <li
                 key={link.id}
-                className="block ml-4 text-gray-600 transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-lg dark:text-gray-50 nav"
+                className="px-4 py-2 block ml-4 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:opacity-70 hover:shadow-lg dark:text-gray-50 nav"
               >
                 <Link href={link.to} target={link.external ? '_blank' : null}>{link.name}</Link>
               </li>
@@ -94,7 +94,7 @@ export default function Header ({ navBarTitle, fullWidth }) {
       >
         <div className="flex items-center">
           <Link href="/" aria-label={BLOG.title}>
-          <svg class="home-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="home-btn hover:animate-pulse" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="12" fill="url(#paint0_radial_5_2)"></circle>
             <defs>
               <radialGradient id="paint0_radial_5_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8 8) rotate(45) scale(15.5563)">
@@ -132,7 +132,7 @@ const HeaderName = forwardRef(function HeaderName ({ siteTitle, siteDescription,
   return (
     <p
       ref={ref}
-      className="header-name ml-2 font-black text-black dark:text-gray-300 capture-pointer-events grid-rows-1 grid-cols-1 items-center"
+      className="header-name ml-2 font-bold text-black dark:text-gray-300 capture-pointer-events grid-rows-1 grid-cols-1 items-center"
       onClick={onClick}
     >
       {postTitle && <span className="post-title row-start-1 col-start-1">{postTitle}</span>}

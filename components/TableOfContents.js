@@ -30,13 +30,12 @@ export default function TableOfContents ({ blockMap, className, style }) {
       className={cn(className, 'font-serif pl-4 text-sm text-zinc-700/70 dark:text-neutral-400')}
       style={style}
     >
-      {nodes.map(node => (
-        <>
-        <div>
-          <p class="text-center font-bold text-black block py-1 hover:text-black dark:text-white cursor-default">
+      <div>
+          <p class="text-left font-bold text-black block py-1 hover:text-black dark:text-white cursor-default">
             目录 {/* 改进：双语、和id绑定 */}
           </p>
         </div>
+      {nodes.map(node => (
         <div key={node.id}>
           <a
             data-target-id={node.id}
@@ -47,7 +46,6 @@ export default function TableOfContents ({ blockMap, className, style }) {
             {node.text}
           </a>
         </div>
-        </>
       ))}
     </aside>
   )

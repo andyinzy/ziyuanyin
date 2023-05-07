@@ -22,7 +22,7 @@ const NavBar = () => {
             link.show && (
               <li
                 key={link.id}
-                className="px-1 py-1 block ml-3 rounded-lg text-gray-400 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:text-gray-800 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
+                className="px-2.5 py-1.5 block ml-3 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:text-gray-800 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
               >
                 <Link href={link.to} target={link.external ? '_blank' : null}>{link.name}</Link>
               </li>
@@ -39,7 +39,7 @@ export default function Header ({ navBarTitle, fullWidth }) {
 
   // Favicon
 
-  const resolveFavicon = fallback => !fallback && dark ? '/favicon.dark.png' : '/favicon.png'
+  const resolveFavicon = fallback => !fallback && dark ? '/favicon.dark.png' : '/favicon.svg'
   const [favicon, _setFavicon] = useState(resolveFavicon())
   const setFavicon = fallback => _setFavicon(resolveFavicon(fallback))
 

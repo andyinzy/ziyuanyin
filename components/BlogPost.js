@@ -7,7 +7,7 @@ const BlogPost = ({ post }) => {
 
   return (
     <Link href={`${BLOG.path}/${post.slug}`}>
-      <article key={post.id} className="mt-5 md:m5-8 px-2 py-2 md:px-2.5 bg-gray-50 rounded shadow-lg">
+      <article key={post.id} className="mt-7 md:mt-10 px-2 py-2 md:px-2.5 bg-gray-50 rounded-lg shadow-lg">
         <header className="flex flex-col pt-3 justify-between md:flex-row md:items-baseline">
           <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
             {post.title}

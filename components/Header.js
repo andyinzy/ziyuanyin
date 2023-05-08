@@ -22,7 +22,7 @@ const NavBar = () => {
             link.show && (
               <li
                 key={link.id}
-                className="px-2.5 py-1.5 block ml-3 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:text-gray-800 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
+                className="px-2 py-1.5 block ml-1 md:ml-4 rounded-lg text-gray-600 transition duration-500 ease-in-out hover:bg-neutral-100 hover:rounded-lg hover:text-gray-800 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
               >
                 <Link href={link.to} target={link.external ? '_blank' : null}>{link.name}</Link>
               </li>
@@ -115,7 +115,7 @@ export default function Header ({ navBarTitle, fullWidth }) {
         </div>
         <svg
           viewBox="0 0 24 24"
-          className="caret w-6 h-6 relative mx-auto pointer-events-none opacity-30 group-hover:opacity-100 transition duration-100"
+          className="caret w-6 h-6 relative mx-auto pointer-events-none opacity-30 group-hover:opacity-100 transition duration-300"
         >
           <path
             d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z"
@@ -138,7 +138,7 @@ const HeaderName = forwardRef(function HeaderName ({ siteTitle, siteDescription,
       {postTitle && <span className="post-title row-start-1 col-start-1">{postTitle}</span>}
       <span className="row-start-1 col-start-1">
         <span className="site-title">{siteTitle}</span>
-        <span className="site-description font-normal">, {siteDescription}</span>
+        <span className="site-description font-normal">，{siteDescription}</span>
       </span>
     </p>
   )

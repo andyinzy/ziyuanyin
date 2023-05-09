@@ -3,7 +3,7 @@ const BLOG = {
   author: 'ziyuan_yin',
   email: 'ziyuan_yin@foxmail.com',
   link: 'https://nobelium.vercel.app',
-  description: '热爱生活，积极创造.',
+  description: '热爱生活，积极创造。',
   lang: 'zh-CN', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   timezone: 'Asia/Shanghai', // Your Notion posts' date will be interpreted as this timezone. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for all options.
   appearance: 'light', // ['light', 'dark', 'auto'],

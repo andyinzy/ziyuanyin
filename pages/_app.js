@@ -1,5 +1,5 @@
-import '@/styles/prism-coy-custom-style.css'
-import 'react-notion-x/src/styles.css'
+import '@/styles/prism-coy-custom-styles.css'
+import '@/styles/react-notion-x-custom-styles.css'
 import 'katex/dist/katex.min.css'
 import App from 'next/app'
 import '@/styles/globals.css'

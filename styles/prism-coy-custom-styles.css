@@ -84,7 +84,7 @@ pre[class*="language-"]:after {
 	content: '';
 	display: block;
 	position: absolute;
-	bottom: 0.8em;
+	bottom: 0.95em;
 	left: 1em;
 	width: 40%;
 	height: 20%;

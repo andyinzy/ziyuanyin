@@ -70,7 +70,7 @@ export default function Post (props) {
         <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-2xl lg:max-w-[unset] lg:min-w-[160px]', fullWidth ? 'flex-none' : 'flex-1')}>
           {/* `65px` is the height of expanded nav */}
           {/* TODO: Remove the magic number */}
-          <TableOfContents blockMap={blockMap} className="pt-3 sticky" style={{ top: '65px' }} />
+          <TableOfContents blockMap={blockMap} className="py-1 sticky" style={{ top: '65px' }} />
         </div>
       </div>
     </article>

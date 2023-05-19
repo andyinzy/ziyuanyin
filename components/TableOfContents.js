@@ -27,7 +27,7 @@ export default function TableOfContents ({ blockMap, className, style }) {
 
   return (
     <aside
-      className={cn(className, 'font-serif ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400')}
+      className={cn(className, 'font-serif ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none text-ellipsis')}
       style={style}
     >
       <div>
@@ -39,7 +39,7 @@ export default function TableOfContents ({ blockMap, className, style }) {
         <div key={node.id}>
           <a
             data-target-id={node.id}
-            className="block py-1 hover:underline-offset-8 hover:text-black active:bg-white dark:hover:text-white cursor-pointer transition duration-100"
+            className="block py-1 pl-4 no-underline hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-black dark:hover:text-white cursor-pointer transition duration-200"
             style={{ paddingLeft: (node.indentLevel * 24) + 'px' }}
             onClick={() => scrollTo(node.id)}
           >

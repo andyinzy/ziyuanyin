@@ -33,7 +33,7 @@ const Comments = ({ frontMatter }) => {
   return (
     <div
       className={cn(
-        'px-4 pt-4 md:pt-12 font-medium text-gray-500 dark:text-gray-400 my-5 border-t-2 border-gray-200',
+        'px-4 pt-4 md:pt-12 font-medium text-gray-500 dark:text-gray-400 mt-5 border-t-2 border-gray-200',
         fullWidth ? 'md:px-24' : 'mx-auto max-w-2xl',
       )}
     >

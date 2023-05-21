@@ -2,7 +2,7 @@ import 'gitalk/dist/gitalk.css'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import cn from 'classnames'
-import { fetchCusdisLang } from '@/lib/cusdisLang'
+// import { fetchCusdisLang } from '@/lib/cusdisLang'
 import { useConfig } from '@/lib/config'
 
 const GitalkComponent = dynamic(
@@ -33,7 +33,7 @@ const Comments = ({ frontMatter }) => {
   return (
     <div
       className={cn(
-        'px-4 font-medium text-gray-500 dark:text-gray-400 my-5',
+        'px-4 pt-4 md:pt-12 font-medium text-gray-500 dark:text-gray-400 my-5 border-t-4 border-gray-200 select-none',
         fullWidth ? 'md:px-24' : 'mx-auto max-w-2xl',
       )}
     >
@@ -56,7 +56,8 @@ const Comments = ({ frontMatter }) => {
       )}
       {BLOG.comment && BLOG.comment.provider === 'cusdis' && (
         <CusdisComponent
-          lang={fetchCusdisLang(BLOG.lang)}
+          // defualt is lang={fetchCusdisLang(BLOG.lang)}
+          lang={'zh-cn'}
           attrs={{
             host: BLOG.comment.cusdisConfig.host,
             appId: BLOG.comment.cusdisConfig.appId,

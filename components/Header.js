@@ -15,7 +15,7 @@ const NavBar = () => {
     { id: 2, name: locale.NAV.SEARCH, to: '/search', show: true }
   ]
   return (
-    <div className="flex-shrink-0">
+    <div className="flex-shrink-0 select-none">
       <ul className="flex flex-row">
         {links.map(
           link =>
@@ -92,7 +92,7 @@ export default function Header ({ navBarTitle, fullWidth }) {
         ref={navRef}
         onClick={handleClickHeader}
       >
-        <div className="flex items-center">
+        <div className="flex items-center select-none">
           <Link href="/" aria-label={BLOG.title}>
           <svg class="home-btn hover:animate-pulse" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="12" fill="url(#paint0_radial_5_2)"></circle>

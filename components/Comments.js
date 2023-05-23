@@ -2,7 +2,7 @@ import 'gitalk/dist/gitalk.css'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import cn from 'classnames'
-// import { fetchCusdisLang } from '@/lib/cusdisLang'
+import { fetchCusdisLang } from '@/lib/cusdisLang'
 import { useConfig } from '@/lib/config'
 
 const GitalkComponent = dynamic(
@@ -56,8 +56,7 @@ const Comments = ({ frontMatter }) => {
       )}
       {BLOG.comment && BLOG.comment.provider === 'cusdis' && (
         <CusdisComponent
-          // default: lang={fetchCusdisLang(BLOG.lang)}
-          lang={'zh-cn'}
+          lang={fetchCusdisLang(BLOG.lang)}
           attrs={{
             host: BLOG.comment.cusdisConfig.host,
             appId: BLOG.comment.cusdisConfig.appId,

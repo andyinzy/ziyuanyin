@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/craigary/nobelium.git"
   },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
+  },
   "author": {
     "name": "Craig Hart",
     "email": "i@craigary.net",

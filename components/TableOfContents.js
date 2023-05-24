@@ -84,17 +84,14 @@ if (!toc || toc.length < 1) {
 //     })
 //   }
 
-  return (
-    <aside
-      className={cn(className, 'font-serif flex-auto overflow-y-auto max-h-96 overscroll-none scroll-hidden ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none text-ellipsis')}
-      style={style}
-      ref={tRef}
-    >
-      <div>
+  return <div className='px-3'>
+    {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
+      <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
+        <nav className='h-full font-sans text-black dark:text-gray-300'>
           <p class="text-left font-bold text-black block py-1 hover:text-black dark:text-white cursor-default">
-            目录 {/* 改进：双语、和id绑定 */}
+            目录
           </p>
-        </div>
+
       {/* {nodes.map(node => (
         <div key={node.id}>
           <a
@@ -106,8 +103,9 @@ if (!toc || toc.length < 1) {
             {node.text}
           </a>
         </div>
-      ))} */
-      toc.map((tocItem) => {
+      ))} */}
+      
+      {toc.map((tocItem) => {
         const id = uuidToId(tocItem.id)
         tocIds.push(id)
         return (
@@ -123,8 +121,10 @@ if (!toc || toc.length < 1) {
           </a>
         )
       })}
-    </aside>
-  )
+      </nav>
+    </div>
+    {/* </aside> */}
+  </div>
 }
 
 // TableOfContents.propTypes = {

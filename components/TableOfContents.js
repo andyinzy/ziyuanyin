@@ -113,10 +113,10 @@ export default function TableOfContents ({ blockMap }) {
           <a
             key={id}
             href={`#${id}`}
-            className={`notion-table-of-contents-item duration-300 transform font-light
+            className={`notion-table-of-contents-item duration-300 transform font-light bg-white rounded-lg shadow-lg
             notion-table-of-contents-item-indent-level-${node.indentLevel} `}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && 'font-bold text-black bg-white rounded-lg shadow-lg'}`}>
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && 'font-bold text-black'}`}>
               {node.text}
             </span>
           </a>

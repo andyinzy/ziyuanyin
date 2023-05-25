@@ -11,7 +11,7 @@ import cn from 'classnames'
  * @returns {JSX.Element}
  * @constructor
  */
-export default function TableOfContents ({ blockMap, className, style }) {
+export default function TableOfContents ({ blockMap }) {
   const collectionId = Object.keys(blockMap.collection)[0]
   const page = Object.values(blockMap.block).find(block => block.value.parent_id === collectionId).value
   const nodes = getPageTableOfContents(page, blockMap)
@@ -85,7 +85,7 @@ export default function TableOfContents ({ blockMap, className, style }) {
 //     })
 //   }
 
-  return <div className='px-3 font-serif'>
+  return <div className='px-3 pb-5 font-serif sticky top-24 select-none'>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
       <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
         <nav className='h-full text-black dark:text-gray-300'>
@@ -116,7 +116,7 @@ export default function TableOfContents ({ blockMap, className, style }) {
             className={`notion-table-of-contents-item duration-300 transform font-light
             notion-table-of-contents-item-indent-level-${node.indentLevel} `}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && ' font-bold text-red-400 underline'}`}>
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && 'font-bold text-black bg-white rounded-lg shadow-lg'}`}>
               {node.text}
             </span>
           </a>

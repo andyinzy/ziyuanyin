@@ -85,10 +85,10 @@ export default function TableOfContents ({ blockMap, className, style }) {
 //     })
 //   }
 
-  return <div className='px-3'>
+  return <div className='px-3 font-serif'>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
       <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
-        <nav className='h-full font-sans text-black dark:text-gray-300'>
+        <nav className='h-full text-black dark:text-gray-300'>
           <p class="text-left font-bold text-black block py-1 hover:text-black dark:text-white cursor-default">
             目录
           </p>

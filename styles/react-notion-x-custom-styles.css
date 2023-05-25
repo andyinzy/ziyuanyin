@@ -1748,7 +1748,12 @@ svg.notion-page-icon {
 }
 
 .notion-table-of-contents-item:hover {
-  background: var(--bg-color-0);
+  /*  default: background: var(--bg-color-0);
+      opacity: 1; */
+  color: rgb(31 41 55);
+  background-color: rgb(255 255 255);
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   opacity: 1;
 }
 

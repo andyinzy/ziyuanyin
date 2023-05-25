@@ -85,7 +85,7 @@ export default function TableOfContents ({ blockMap }) {
 //     })
 //   }
 
-  return <div className='px-3 pb-5 font-serif sticky top-24 select-none'>
+  return <div className='px-3 pb-5 mt-10 font-serif sticky top-24 select-none'>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
       <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
         <nav className='h-full text-black dark:text-gray-300'>
@@ -113,10 +113,11 @@ export default function TableOfContents ({ blockMap }) {
           <a
             key={id}
             href={`#${id}`}
-            className={`notion-table-of-contents-item duration-300 transform font-light bg-white rounded-lg shadow-lg
-            notion-table-of-contents-item-indent-level-${node.indentLevel} `}
+            className={`z-50 notion-table-of-contents-item duration-300 transform font-light
+            notion-table-of-contents-item-indent-level-${node.indentLevel}
+            ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && 'font-bold text-black'}`}>
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} >
               {node.text}
             </span>
           </a>

@@ -11,7 +11,10 @@ import cn from 'classnames'
  * @returns {JSX.Element}
  * @constructor
  */
-const Toc = ({ toc }) => {
+export default function TableOfContents ({ blockMap, className, style }) {
+  const collectionId = Object.keys(blockMap.collection)[0]
+  const page = Object.values(blockMap.block).find(block => block.value.parent_id === collectionId).value
+  const nodes = getPageTableOfContents(page, blockMap)
   // 监听滚动事件
   React.useEffect(() => {
     window.addEventListener('scroll', actionSectionScrollSpy)
@@ -55,10 +58,8 @@ const Toc = ({ toc }) => {
     tRef?.current?.scrollTo({ top: 28 * index, behavior: 'smooth' })
   }, throttleMs))
 
-// 无目录就直接返回空
-if (!toc || toc.length < 1) {
-  return <></>
-}
+  // 无目录就直接返回空
+  if (!nodes.length) return null
 
 
 // export default function TableOfContents ({ blockMap, className, style }) {
@@ -105,18 +106,18 @@ if (!toc || toc.length < 1) {
         </div>
       ))} */}
       
-      {toc.map((tocItem) => {
-        const id = uuidToId(tocItem.id)
+      {nodes.map((node) => {
+        const id = uuidToId(node.id)
         tocIds.push(id)
         return (
           <a
             key={id}
             href={`#${id}`}
             className={`notion-table-of-contents-item duration-300 transform font-light
-            notion-table-of-contents-item-indent-level-${tocItem.indentLevel} `}
+            notion-table-of-contents-item-indent-level-${node.indentLevel} `}
           >
-            <span style={{ display: 'inline-block', marginLeft: tocItem.indentLevel * 16 }} className={`${activeSection === id && ' font-bold text-red-400 underline'}`}>
-              {tocItem.text}
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} className={`${activeSection === id && ' font-bold text-red-400 underline'}`}>
+              {node.text}
             </span>
           </a>
         )
@@ -127,7 +128,8 @@ if (!toc || toc.length < 1) {
   </div>
 }
 
-// TableOfContents.propTypes = {
-//   blockMap: PropTypes.object.isRequired
-// }
-export default Toc
+TableOfContents.propTypes = {
+  blockMap: PropTypes.object.isRequired
+}
+
+// export default Toc

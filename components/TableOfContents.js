@@ -117,7 +117,7 @@ export default function TableOfContents ({ blockMap }) {
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }} >
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
               {node.text}
             </span>
           </a>

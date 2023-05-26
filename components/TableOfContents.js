@@ -89,9 +89,9 @@ export default function TableOfContents ({ blockMap }) {
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
       <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
         <nav className='h-full text-black dark:text-gray-300'>
-          <p class="text-center sticky font-bold text-black block py-1 hover:text-black dark:text-white cursor-default">
-            <i class="fal fa-stream" />
-            {目录}
+          <p class="text-center sticky font-bold text-black block pt-1 pb-5 border-l-2 border-gray-200 hover:text-black dark:text-white cursor-default">
+          <svg t="1685084190640" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2394" width="200" height="200"><path d="M853.333333 218.666667a37.333333 37.333333 0 0 1 3.072 74.538666L853.333333 293.333333H362.666667a37.333333 37.333333 0 0 1-3.072-74.538666L362.666667 218.666667h490.666666zM853.333333 474.666667a37.333333 37.333333 0 0 1 3.072 74.538666L853.333333 549.333333H362.666667a37.333333 37.333333 0 0 1-3.072-74.538666L362.666667 474.666667h490.666666zM853.333333 730.666667a37.333333 37.333333 0 0 1 3.072 74.538666L853.333333 805.333333H362.666667a37.333333 37.333333 0 0 1-3.072-74.538666L362.666667 730.666667h490.666666z" fill="#000000" p-id="2395"></path><path d="M202.666667 256m-53.333334 0a53.333333 53.333333 0 1 0 106.666667 0 53.333333 53.333333 0 1 0-106.666667 0Z" fill="#000000" p-id="2396"></path><path d="M202.666667 512m-53.333334 0a53.333333 53.333333 0 1 0 106.666667 0 53.333333 53.333333 0 1 0-106.666667 0Z" fill="#000000" p-id="2397"></path><path d="M202.666667 768m-53.333334 0a53.333333 53.333333 0 1 0 106.666667 0 53.333333 53.333333 0 1 0-106.666667 0Z" fill="#000000" p-id="2398"></path></svg>
+            目录
           </p>
 
       {/* {nodes.map(node => (

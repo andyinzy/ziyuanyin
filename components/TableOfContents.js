@@ -77,8 +77,8 @@ export default function TableOfContents ({ blockMap }) {
 //     })
 //   }
 
-  return <div className='px-3 pb-5 mt-10 font-serif sticky top-24 select-none'>
-          <p class="text-center sticky font-bold text-black block pt-1 pb-5 border-l-2 border-gray-200 hover:text-black dark:text-white cursor-default">
+  return <div className='px-3 mt-10 font-serif sticky top-24 select-none'>
+          <p class="text-center sticky font-bold text-black block pt-1 pb-5 border-b-2 border-gray-200 hover:text-black dark:text-white cursor-default">
             目录
           </p>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
@@ -104,11 +104,11 @@ export default function TableOfContents ({ blockMap }) {
           <a
             key={id}
             href={`#${id}`}
-            className={`z-50 notion-table-of-contents-item duration-300 transform font-light
+            className={`z-50 pb-2 notion-table-of-contents-item duration-300 transform font-light
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 16 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 24 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
               {node.text}
             </span>
           </a>

@@ -55,7 +55,8 @@ export default function TableOfContents ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    tRef?.current?.scrollTo({ top: 28 * index, behavior: 'smooth' })
+    const top = 28 * index + 10
+    tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
   // 无目录就直接返回空
@@ -78,9 +79,15 @@ export default function TableOfContents ({ blockMap }) {
 //   }
 
   return <div className='px-3 mt-10 font-serif sticky top-24 select-none'>
-          <p class="text-center sticky font-bold text-black block pt-2 pb-5 mb-5 border-b-2 border-gray-200 hover:text-black dark:text-white cursor-default">
+          <p className="text-center sticky font-bold text-black block pt-2 pb-5 mb-5 border-b-2 border-gray-200 hover:text-black dark:text-white cursor-default">
             目录
           </p>
+          <div className='catalog-divider sticky'>
+            <div className="shadow"></div>
+            <div className="catalog-img">
+              <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcQsmMfybMIwoE5etmOIAuvnFWdfv_8C1Bq15urJFqwhhI55FyYNP2YuUA" />
+              </div>
+          </div>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
       <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
         <nav className='h-full text-black dark:text-gray-300'>
@@ -108,7 +115,7 @@ export default function TableOfContents ({ blockMap }) {
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 24 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
+            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
               {node.text}
             </span>
           </a>

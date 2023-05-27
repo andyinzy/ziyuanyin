@@ -79,10 +79,10 @@ export default function TableOfContents ({ blockMap }) {
 //   }
 
   return <div className='px-3 mt-10 font-serif sticky top-24 select-none'>
-          <p className="text-center sticky font-bold text-black block pt-2 pb-5 mb-5 border-b-2 border-gray-200 hover:text-black dark:text-white cursor-default">
+          <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
             目录
           </p>
-          <div className='catalog-divider sticky'>
+          <div className='z=50 catalog-divider sticky'>
             <div className="shadow"></div>
             <div className="catalog-img">
               <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcQsmMfybMIwoE5etmOIAuvnFWdfv_8C1Bq15urJFqwhhI55FyYNP2YuUA" />
@@ -111,7 +111,7 @@ export default function TableOfContents ({ blockMap }) {
           <a
             key={id}
             href={`#${id}`}
-            className={`z-50 pb-2 notion-table-of-contents-item duration-300 transform font-light
+            className={`z-40 pb-2 notion-table-of-contents-item duration-300 transform font-light
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >

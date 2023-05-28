@@ -167,17 +167,18 @@ nav {
 /* catalog-divider */
 .catalog-divider {
   margin: auto;
-  margin-top: 80px;
-  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 60%;
   position: relative;
 }
 
-.catalog-divider .shadow {
+.catalog-divider .divider-shadow {
   overflow: hidden;
   height: 20px;
 }
 
-.catalog-divider .shadow:after {
+.catalog-divider .divider-shadow:after {
   content: '';
   display: block;
   margin: -25px auto 0;

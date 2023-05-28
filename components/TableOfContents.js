@@ -55,7 +55,7 @@ export default function TableOfContents ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    const top = 28 * index + 10
+    const top = 28 * index
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
@@ -82,8 +82,8 @@ export default function TableOfContents ({ blockMap }) {
           <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
             目录
           </p>
-          <div className='z=50 catalog-divider sticky'>
-            <div className="shadow"></div>
+          <div className='z-50 catalog-divider sticky'>
+            <div className="divider-shadow"></div>
             <div className="catalog-img">
               <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcQsmMfybMIwoE5etmOIAuvnFWdfv_8C1Bq15urJFqwhhI55FyYNP2YuUA" />
               </div>

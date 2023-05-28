@@ -42,7 +42,6 @@ export default function TableOfContents ({ blockMap }) {
         currentSectionId = section.getAttribute('data-id')
       }
       const bbox = section.getBoundingClientRect()
-      const bbox_top = bbox.top
       const prevHeight = prevBBox ? bbox.top - prevBBox.bottom : 0
       const offset = Math.max(150, prevHeight / 4)
       // GetBoundingClientRect returns values relative to viewport
@@ -56,10 +55,7 @@ export default function TableOfContents ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    // const top = 28 * index
-    id = id.replaceAll('-', '')
-    const target = document.querySelector(`.notion-block-${id}`)
-    const top = document.documentElement.scrollTop + target.getBoundingClientRect().top - 65
+    const top = 28 * index
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 

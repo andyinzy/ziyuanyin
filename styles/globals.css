@@ -164,12 +164,15 @@ nav {
   @apply pointer-events-none;
 }
 
-/* catalog-divider */
+/* 
+  @ style name: catalog-divider 
+  @ used for decoration in table of content
+  */
 .catalog-divider {
   margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 60%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 70%;
   position: relative;
 }
 
@@ -188,23 +191,32 @@ nav {
   box-shadow: 0 0 8px black;
 }
 
-.catalog-divider .catalog-img {
-  width: 70px;
-  height: 70px;
+.catalog-divider .catalog-tag {
+  width: 80px;
+  height: 40px;
+  padding: 12px;
   position: absolute;
   bottom: 100%;
-  margin-bottom: -35px;
+  margin-bottom: -20px;
   left: 50%;
-  margin-left: -25px;
+  margin-left: -40px;
   border-radius: 100%;
   box-shadow: 0 2px 4px #999;
   background: white;
 }
 
-.catalog-divider img {
+.catalog-divider .catalog-tag i {
   position: absolute;
-  margin: 4px;
-  max-width: 60px;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
   border-radius: 100%;
   border: 1px dashed #aaa;
+  text-align: center;
+  line-height: 50px;
+  font-style: normal;
+  color: #999;
+  display: inline-block;
+  line-height: 30px;
 }

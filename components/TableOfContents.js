@@ -79,13 +79,13 @@ export default function TableOfContents ({ blockMap }) {
 //   }
 
   return <div className='px-3 mt-10 font-serif sticky top-24 select-none'>
-          <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
+          {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
             目录
-          </p>
+          </p> */}
           <div className='z-50 catalog-divider sticky'>
             <div className="divider-shadow"></div>
-            <div className="catalog-img">
-              <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcQsmMfybMIwoE5etmOIAuvnFWdfv_8C1Bq15urJFqwhhI55FyYNP2YuUA" />
+            <div className="catalog-tag">
+              <i className="sticky font-bold text-black">目 录</i>
               </div>
           </div>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}

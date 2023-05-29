@@ -111,7 +111,7 @@ export default function TableOfContents ({ blockMap }) {
           <a
             key={id}
             href={`#${id}`}
-            className={`z-40 pb-2 notion-table-of-contents-item duration-300 transform font-light
+            className={`z-40 pb-2 notion-table-of-contents-item transition duration-300 ease-in-out font-light
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
           >

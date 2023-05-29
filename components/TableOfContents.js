@@ -78,7 +78,7 @@ export default function TableOfContents ({ blockMap }) {
 //     })
 //   }
 
-  return <div className='px-3 mt-10 font-serif sticky top-24 select-none'>
+  return <div className='px-3 lg:ml-16 mt-10 font-serif sticky top-24 select-none'>
           {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
             目录
           </p> */}
@@ -89,7 +89,7 @@ export default function TableOfContents ({ blockMap }) {
               </div>
           </div>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-      <div className='overflow-y-auto max-h-96 overscroll-none scroll-hidden' ref={tRef}>
+      <div className='overflow-y-auto max-h-52 lg:max-h-96 overscroll-none scroll-hidden' ref={tRef}>
         <nav className='h-full text-black dark:text-gray-300'>
       {/* {nodes.map(node => (
         <div key={node.id}>
@@ -103,7 +103,7 @@ export default function TableOfContents ({ blockMap }) {
           </a>
         </div>
       ))} */}
-      
+
       {nodes.map((node) => {
         const id = uuidToId(node.id)
         tocIds.push(id)

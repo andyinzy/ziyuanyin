@@ -27,14 +27,14 @@ export default function Post (props) {
   return (
     <article className={cn('flex flex-col', fullWidth ? 'md:px-24' : 'items-center')}>
       <h1 className={cn(
-        'w-full font-bold text-3xl text-black dark:text-white',
+        'justify-center text-center w-full font-bold text-3xl text-black dark:text-white',
         { 'max-w-2xl px-4': !fullWidth }
       )}>
         {post.title}
       </h1>
       {post.type[0] !== 'Page' && (
         <nav className={cn(
-          'w-full flex mt-7 items-start text-gray-500 dark:text-gray-400',
+          'w-full flex mt-7 justify-center items-start text-gray-500 dark:text-gray-400',
           { 'max-w-2xl px-4': !fullWidth }
         )}>
           <div className="flex mb-4">
@@ -62,12 +62,13 @@ export default function Post (props) {
           )}
         </nav>
       )}
-      <div className="self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
-        {!fullWidth && <div className="flex-1 hidden lg:block" />}
+      <div className="justify-center self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
+        {/* {!fullWidth && <div className="flex-1 hidden lg:block" />} */}
         <div className={fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-3xl px-4 md:px-8 mt-10 bg-white drop-shadow-xl'}>
           <NotionRenderer recordMap={blockMap} fullPage={false} darkMode={dark} />
         </div>
-        <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-2xl lg:max-w-[unset] lg:min-w-[160px]', fullWidth ? 'flex-none' : 'flex-1')}>
+        {/* default : <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-2xl lg:max-w-2xl lg:min-w-[180px]', fullWidth ? 'flex-none' : 'flex-1')}> */}
+        <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[160px]', fullWidth ? 'flex-none' : 'flex-1')}>
           {/* `65px` is the height of expanded nav */}
           {/* TODO: Remove the magic number */}
           <TableOfContents blockMap={blockMap} />

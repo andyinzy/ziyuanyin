@@ -78,7 +78,7 @@ export default function TableOfContents ({ blockMap }) {
 //     })
 //   }
 
-  return <div className='px-3 lg:ml-16 mt-10 font-serif sticky top-24 select-none'>
+  return <div className='px-3 lg:ml-14 mt-10 font-serif sticky top-24 select-none'>
           {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
             目录
           </p> */}

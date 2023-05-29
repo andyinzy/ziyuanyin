@@ -64,11 +64,11 @@ export default function Post (props) {
       )}
       <div className="justify-center self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
         {/* {!fullWidth && <div className="flex-1 hidden lg:block" />} */}
-        <div className={fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-3xl px-4 md:px-8 mt-10 bg-white drop-shadow-xl'}>
+        <div className={fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-4xl px-4 md:px-11 mt-10 bg-white drop-shadow-xl'}>
           <NotionRenderer recordMap={blockMap} fullPage={false} darkMode={dark} />
         </div>
         {/* default : <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-2xl lg:max-w-2xl lg:min-w-[180px]', fullWidth ? 'flex-none' : 'flex-1')}> */}
-        <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[160px]', fullWidth ? 'flex-none' : 'flex-1')}>
+        <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[180px]', fullWidth ? 'flex-none' : 'flex-1')}>
           {/* `65px` is the height of expanded nav */}
           {/* TODO: Remove the magic number */}
           <TableOfContents blockMap={blockMap} />

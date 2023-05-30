@@ -55,7 +55,7 @@ export default function TableOfContents ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    const top = 28 * index
+    const top = 28 * index - 28
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 

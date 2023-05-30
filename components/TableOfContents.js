@@ -62,21 +62,21 @@ export default function TableOfContents ({ blockMap }) {
   // 无目录就直接返回空
   if (!nodes.length) return null
 
-//   /**
-//    * @param {string} id - The ID of target heading block (could be in UUID format)
-//    */
-//   function scrollTo (id) {
-//     id = id.replaceAll('-', '')
-//     const target = document.querySelector(`.notion-block-${id}`)
-//     if (!target) return
-//     // `65` is the height of expanded nav
-//     // TODO: Remove the magic number
-//     const top = document.documentElement.scrollTop + target.getBoundingClientRect().top - 65
-//     document.documentElement.scrollTo({
-//       top,
-//       behavior: 'smooth'
-//     })
-//   }
+  /**
+   * @param {string} id - The ID of target heading block (could be in UUID format)
+   */
+  function scrollTo (id) {
+    id = id.replaceAll('-', '')
+    const target = document.querySelector(`.notion-block-${id}`)
+    if (!target) return
+    // `65` is the height of expanded nav
+    // TODO: Remove the magic number
+    const top = document.documentElement.scrollTop + target.getBoundingClientRect().top - 65
+    document.documentElement.scrollTo({
+      top,
+      behavior: 'smooth'
+    })
+  }
 
   return <div className='px-3 lg:ml-14 mt-10 font-serif sticky top-24 select-none'>
           {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
@@ -114,6 +114,7 @@ export default function TableOfContents ({ blockMap }) {
             className={`z-40 pb-2 notion-table-of-contents-item transition duration-300 ease-in-out font-light
             notion-table-of-contents-item-indent-level-${node.indentLevel}
             ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
+            onClick={() => scrollTo(node.id)}
           >
             <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
               {node.text}

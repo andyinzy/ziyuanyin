@@ -56,7 +56,7 @@ export default function LayoutCatalog ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    const top = 28 * index - 28
+    const top = 28 * index
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
@@ -84,7 +84,7 @@ export default function LayoutCatalog ({ blockMap }) {
 
   return (
   <div className = {`${ifSideRender ? 'order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[180px]' : 'hidden'}`}>
-    <div className='px-3 lg:ml-14 mt-10 font-serif sticky top-24 select-none'>
+    <div className='px-3 lg:mx-14 mt-10 pb-5 font-serif sticky top-24 select-none'>
         {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
           目录
         </p> */}

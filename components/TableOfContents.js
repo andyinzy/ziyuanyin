@@ -15,6 +15,7 @@ export default function TableOfContents ({ blockMap }) {
   const collectionId = Object.keys(blockMap.collection)[0]
   const page = Object.values(blockMap.block).find(block => block.value.parent_id === collectionId).value
   const nodes = getPageTableOfContents(page, blockMap)
+  var ifSideRender = true
   // 监听滚动事件
   React.useEffect(() => {
     window.addEventListener('scroll', actionSectionScrollSpy)
@@ -60,7 +61,10 @@ export default function TableOfContents ({ blockMap }) {
   }, throttleMs))
 
   // 无目录就直接返回空
-  if (!nodes.length) return null
+  if (!nodes.length) {
+    ifSideRender = false
+    return null
+  }
 
   /**
    * @param {string} id - The ID of target heading block (could be in UUID format)
@@ -78,55 +82,56 @@ export default function TableOfContents ({ blockMap }) {
     })
   }
 
-  return <div className='px-3 lg:ml-14 mt-10 font-serif sticky top-24 select-none'>
-          {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
-            目录
-          </p> */}
-          <div className='z-50 catalog-divider sticky'>
-            <div className="divider-shadow"></div>
-            <div className="catalog-tag">
-              <i className="sticky font-bold text-black">目 录</i>
-              </div>
-          </div>
-    {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-      <div className='overflow-y-auto max-h-52 lg:max-h-96 overscroll-none scroll-hidden' ref={tRef}>
-        <nav className='h-full text-black dark:text-gray-300'>
-      {/* {nodes.map(node => (
-        <div key={node.id}>
-          <a
-            data-target-id={node.id}
-            className="block py-1 pl-4 no-underline hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-black dark:hover:text-white cursor-pointer transition duration-200"
-            style={{ paddingLeft: (node.indentLevel * 24) + 'px' }}
-            onClick={() => scrollTo(node.id)}
-          >
-            {node.text}
-          </a>
+  return (<div className = {`${ifSideRender ? 'order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[180px]' : 'hidden'}`}>
+        <div className='px-3 lg:ml-14 mt-10 font-serif sticky top-24 select-none'>
+        {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
+          目录
+        </p> */}
+        <div className='z-50 catalog-divider sticky'>
+          <div className="divider-shadow"></div>
+          <div className="catalog-tag">
+            <i className="sticky font-bold text-black">目 录</i>
+            </div>
         </div>
-      ))} */}
-
-      {nodes.map((node) => {
-        const id = uuidToId(node.id)
-        tocIds.push(id)
-        return (
-          <a
-            key={id}
-            href={`#${id}`}
-            className={`z-40 pb-2 notion-table-of-contents-item transition duration-300 ease-in-out font-light
-            notion-table-of-contents-item-indent-level-${node.indentLevel}
-            ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
-            onClick={() => scrollTo(node.id)}
-          >
-            <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
-              {node.text}
-            </span>
-          </a>
-        )
-      })}
-      </nav>
-    </div>
-    {/* </aside> */}
+    {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
+    <div className='overflow-y-auto max-h-52 lg:max-h-96 overscroll-none scroll-hidden' ref={tRef}>
+      <nav className='h-full text-black dark:text-gray-300'>
+{/* {nodes.map(node => (
+  <div key={node.id}>
+    <a
+      data-target-id={node.id}
+      className="block py-1 pl-4 no-underline hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-black dark:hover:text-white cursor-pointer transition duration-200"
+      style={{ paddingLeft: (node.indentLevel * 24) + 'px' }}
+      onClick={() => scrollTo(node.id)}
+    >
+      {node.text}
+    </a>
   </div>
-}
+))} */}
+        {nodes.map((node) => {
+          const id = uuidToId(node.id)
+          tocIds.push(id)
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`z-40 pb-2 notion-table-of-contents-item transition duration-300 ease-in-out font-light
+              notion-table-of-contents-item-indent-level-${node.indentLevel}
+              ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
+              onClick={() => scrollTo(node.id)}
+            >
+              <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
+                {node.text}
+              </span>
+            </a>
+          )
+        })}
+        </nav>
+        </div>
+        {/* </aside> */}
+        </div>
+        </div>
+)}
 
 TableOfContents.propTypes = {
   blockMap: PropTypes.object.isRequired

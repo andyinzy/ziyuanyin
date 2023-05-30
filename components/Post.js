@@ -7,6 +7,7 @@ import FormattedDate from '@/components/FormattedDate'
 import TagItem from '@/components/TagItem'
 import NotionRenderer from '@/components/NotionRenderer'
 import TableOfContents from '@/components/TableOfContents'
+import ifSideRender from '@/components/TableOfContents'
 
 /**
  * A post renderer
@@ -23,6 +24,14 @@ export default function Post (props) {
   const BLOG = useConfig()
   const { post, blockMap, emailHash, fullWidth = false } = props
   const { dark } = useTheme()
+
+  // function isEmptyObject(value) {
+  //   console.log('Object is', value);
+  //   console.log('Is Object equals null', value===null);
+  //   console.log('Object TOC.keys(value).length is', Object.keys(value).length);
+  //   console.log('Object value.constructor === Object', value.constructor === Object);
+  //   return Object.keys(value).length === 0;
+  // }
 
   return (
     <article className={cn('flex flex-col', fullWidth ? 'md:px-24' : 'items-center')}>
@@ -68,13 +77,10 @@ export default function Post (props) {
           <NotionRenderer recordMap={blockMap} fullPage={false} darkMode={dark} />
         </div>
         {/* default : <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-2xl lg:max-w-2xl lg:min-w-[180px]', fullWidth ? 'flex-none' : 'flex-1')}> */}
-        <div className={cn('order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[180px]', fullWidth ? 'flex-none' : 'flex-1')}>
-          {/* `65px` is the height of expanded nav */}
-          {/* TODO: Remove the magic number */}
+        {/* `65px` is the height of expanded nav */}
           <TableOfContents blockMap={blockMap} />
           {/* className="py-1 sticky" style={{ top: '105px' }}  */}
         </div>
-      </div>
     </article>
   )
 }

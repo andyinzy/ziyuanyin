@@ -6,8 +6,7 @@ import useTheme from '@/lib/theme'
 import FormattedDate from '@/components/FormattedDate'
 import TagItem from '@/components/TagItem'
 import NotionRenderer from '@/components/NotionRenderer'
-import TableOfContents from '@/components/TableOfContents'
-import ifSideRender from '@/components/TableOfContents'
+import LayoutCatalog from '@/components/LayoutCatalog'
 
 /**
  * A post renderer

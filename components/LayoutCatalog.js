@@ -56,7 +56,7 @@ export default function LayoutCatalog ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    const top = 28 * index
+    const top = 38 * index
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
@@ -84,7 +84,7 @@ export default function LayoutCatalog ({ blockMap }) {
 
   return (
   <div className = {`${ifSideRender ? 'order-first lg:order-[unset] w-full lg:w-auto max-w-xs lg:max-w-sm lg:min-w-[180px]' : 'hidden'}`}>
-    <div className='px-3 lg:mx-14 mt-10 pb-5 font-serif sticky top-24 select-none'>
+    <div className='px-3 lg:mx-10 mt-10 pb-5 font-serif sticky top-24 select-none'>
         {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
           目录
         </p> */}
@@ -95,7 +95,7 @@ export default function LayoutCatalog ({ blockMap }) {
             </div>
           </div>
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-          <div className='overflow-y-auto max-h-52 lg:max-h-96 overscroll-none scroll-hidden' ref={tRef}>
+          <div className='overflow-y-auto max-h-52 lg:max-h-96 overscroll-none scroll-smooth scroll-py-4' ref={tRef}>
             <nav className='h-full text-black dark:text-gray-300'>
                 {/* {nodes.map(node => (
                   <div key={node.id}>
@@ -116,12 +116,12 @@ export default function LayoutCatalog ({ blockMap }) {
                   <a
                     key={id}
                     href={`#${id}`}
-                    className={`z-40 pb-2 notion-table-of-contents-item transition duration-300 ease-in-out font-light
+                    className={`z-40 mb-1.5 mx-1 notion-table-of-contents-item transition duration-300 ease-in-out font-normal
                     notion-table-of-contents-item-indent-level-${node.indentLevel}
-                    ${activeSection === id && 'bg-white rounded-lg shadow-lg font-bold text-black'}`}
+                    ${activeSection === id && 'bg-white rounded-lg shadow-md font-bold text-black'}`}
                     onClick={() => scrollTo(node.id)}
                   >
-                    <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
+                    <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black text-lg'}`}>
                       {node.text}
                     </span>
                   </a>

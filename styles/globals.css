@@ -164,8 +164,8 @@ nav {
   @apply pointer-events-none;
 }
 
-/* 
-  @ style name: catalog-divider 
+/*
+  @ style name: catalog-divider
   @ used for decoration in table of content
   */
 .catalog-divider {
@@ -219,4 +219,16 @@ nav {
   color: #999;
   display: inline-block;
   line-height: 30px;
+}
+
+
+/* 隐藏滚动条 */
+.scroll-hidden {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none; /* firefox */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  width: 0 !important;
 }

@@ -47,7 +47,7 @@ export default function BlogPost ({ post, blockMap, emailHash }) {
         <a>
           <button
             onClick={() => router.push(BLOG.path || '/')}
-            className="items-center	px-4 py-3 block rounded-lg mt-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:shadow-lg hover:text-black dark:hover:text-gray-100"
+            className="items-center	px-3 py-2 block rounded-lg mt-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:shadow-lg hover:text-black dark:hover:text-gray-100"
           >
             ← {locale.POST.BACK}
           </button>
@@ -58,7 +58,7 @@ export default function BlogPost ({ post, blockMap, emailHash }) {
               top: 0,
               behavior: 'smooth'
             })}
-            className="items-center	px-4 py-3 block rounded-lg mt-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:shadow-lg hover:text-black dark:hover:text-gray-100"
+            className="items-center	px-3 py-2 block rounded-lg mt-2 cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:shadow-lg hover:text-black dark:hover:text-gray-100"
           >
             ↑ {locale.POST.TOP}
           </button>

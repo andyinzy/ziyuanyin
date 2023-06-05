@@ -10,7 +10,7 @@ const BlogPost = ({ post }) => {
   return (
     <Fade bottom>
       <Link href={`${BLOG.path}/${post.slug}`}>
-        <article key={post.id} className="mt-7 md:mt-10 px-2 py-2 md:px-2.5 bg-gray-50 rounded-lg shadow-lg">
+        <article key={post.id} className="mt-7 md:mt-10 px-2 py-2 md:px-2.5 bg-gray-50 rounded-lg shadow-md hover:shadow-xl">
           <header className="flex flex-col pt-3 justify-between md:flex-row md:items-baseline">
             <h2 className="text-lg md:text-xl font-medium mb-2 ml-4 md:ml-6 pl-2 cursor-pointer text-black dark:text-gray-100">
               {post.title}

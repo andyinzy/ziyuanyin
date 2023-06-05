@@ -664,13 +664,15 @@ svg.notion-page-icon {
 
 .notion-quote {
   display: block;
+  border-radius: 4px;
+  background-color: #F9F9F9;
   width: 100%;
   white-space: pre-wrap;
   word-break: break-word;
-  border-left: 3px solid currentcolor;
+  border-left: 6px solid currentcolor;
   padding: 0.2em 0.9em;
   margin: 6px 0;
-  font-size: 1.2em;
+  font-size: 1.05em;
 }
 
 .notion-hr {

@@ -167,7 +167,8 @@ nav {
 /*
   @ style name: catalog-divider
   @ used for decoration in table of content
-  */
+  @ 废弃，不再需要
+
 .catalog-divider {
   margin: auto;
   margin-top: 25px;
@@ -220,7 +221,7 @@ nav {
   display: inline-block;
   line-height: 30px;
 }
-
+*/
 
 /* 隐藏滚动条 */
 .scroll-hidden {

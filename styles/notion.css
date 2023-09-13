@@ -74,7 +74,8 @@ summary > .notion-h {
   position: relative;
   font-weight: 600;
   line-height: 1.3;
-  padding: 3px 2px;
+  padding: 1.5em 2px 1em;
+  margin-top: 1.1em;
   margin-bottom: 1px;
   max-width: 100%;
   white-space: pre-wrap;
@@ -82,8 +83,7 @@ summary > .notion-h {
 }
 
 .notion-h1 {
-  font-size: 1.575em;
-  margin-top: 1.08em;
+  font-size: 1.575em;  
   @apply border-b w-full
 }
 .notion-h2 {

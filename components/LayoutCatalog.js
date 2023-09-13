@@ -56,7 +56,7 @@ export default function LayoutCatalog ({ blockMap }) {
     }
     setActiveSection(currentSectionId)
     const index = tocIds.indexOf(currentSectionId) || 0
-    const top = 38 * index
+    const top = index > 0 ? 38 * index - 38 : 0;
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
@@ -85,45 +85,51 @@ export default function LayoutCatalog ({ blockMap }) {
   return (
   <div className = {`${ifSideRender ? 'order-first lg:order-[unset] w-full lg:w-auto max-w-sm lg:max-w-md lg:min-w-[180px]' : 'hidden'}`}>
     <div className='px-3 lg:mx-10 mt-10 pb-8 font-serif sticky top-24 select-none border rounded-sm lg:p-6 p-4 hidden lg:block bg-white drop-shadow-xl'>
-        {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
-          目录
-        </p> */}
-          <i className="flex justify-center font-bold text-black mt-1 mb-8 font-serif"> 目 录 </i>
+{/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
+  目录
+</p> */}
+        <div className="sticky text-center text-black mt-1 mb-8">
+          <i> 目 录 </i>
+        </div>
+        
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-          <div className='overflow-y-auto max-h-52 max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden truncate' ref={tRef}>
-            <nav className='h-full text-black dark:text-gray-300'>
-                {/* {nodes.map(node => (
-                  <div key={node.id}>
-                    <a
-                      data-target-id={node.id}
-                      className="block py-1 pl-4 no-underline hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-black dark:hover:text-white cursor-pointer transition duration-200"
-                      style={{ paddingLeft: (node.indentLevel * 24) + 'px' }}
-                      onClick={() => scrollTo(node.id)}
-                    >
-                      {node.text}
-                    </a>
-                  </div>
-                ))} */}
-              {nodes.map((node) => {
-                const id = uuidToId(node.id)
-                tocIds.push(id)
-                return (
+        <div className='overflow-y-auto max-h-52 max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden truncate' ref={tRef}>
+          <nav className='h-full text-black dark:text-gray-300'>
+              {/* {nodes.map(node => (
+                <div key={node.id}>
                   <a
-                    key={id}
-                    href={`#${id}`}
-                    className={`z-40 mb-1.5 mx-1 max-w-xs notion-table-of-contents-item transition duration-300 ease-in-out font-normal
-                    notion-table-of-contents-item-indent-level-${node.indentLevel}
-                    ${activeSection === id && 'bg-white font-bold text-black'}`}
+                    data-target-id={node.id}
+                    className="block py-1 pl-4 no-underline hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-black dark:hover:text-white cursor-pointer transition duration-200"
+                    style={{ paddingLeft: (node.indentLevel * 24) + 'px' }}
                     onClick={() => scrollTo(node.id)}
                   >
-                    <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`${activeSection === id && 'font-bold text-black'}`}>
-                      {node.text}
-                    </span>
+                    {node.text}
                   </a>
-                )
-              })}
-            </nav>
-          </div>
+                </div>
+              ))} */}
+            {nodes.map((node) => {
+              const id = uuidToId(node.id)
+              tocIds.push(id)
+              return (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className={`z-40 mb-1.5 mx-1 notion-aside-table-of-contents-item transition duration-300 ease-in-out font-normal
+                  notion-table-of-contents-item-indent-level-${node.indentLevel}
+                  ${activeSection === id && 'bg-white font-bold text-black'}`}
+                  onClick={() => scrollTo(node.id)}
+                >
+                  <span style={{ display: 'inline-block', marginLeft: node.indentLevel * 20 }}  className={`
+                    ${activeSection === id && 'font-bold text-black'}
+                    ${node.text.length > 14 ? 'truncate' : ' '}
+                      `}>
+                    {node.text}
+                  </span>
+                </a>
+              )
+            })}
+          </nav>
+        </div>
     </div>
   </div>
 )}

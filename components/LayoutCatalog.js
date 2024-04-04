@@ -84,7 +84,7 @@ export default function LayoutCatalog ({ blockMap }) {
 
   return (
   <div className = {`${ifSideRender ? 'order-first lg:order-[unset] w-full lg:w-auto max-w-sm lg:max-w-md lg:min-w-[180px]' : 'hidden'}`}>
-    <div className='px-3 lg:mx-10 mt-10 pb-8 font-serif sticky top-24 select-none border rounded-sm lg:p-6 p-4 hidden lg:block lg:min-w-max bg-white drop-shadow-xl'>
+    <div className='px-3 lg:mx-10 mt-10 pb-8 font-serif sticky top-24 select-none border rounded-sm lg:p-6 p-4 hidden lg:block lg:w-96 bg-white drop-shadow-xl'>
 {/* <p className="text-center sticky font-bold text-black block pt-2 mb-5 hover:text-black dark:text-white cursor-default">
   目录
 </p> */}
@@ -93,7 +93,7 @@ export default function LayoutCatalog ({ blockMap }) {
         </div>
         
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-        <div className='overflow-y-auto max-h-52 max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden truncate' ref={tRef}>
+        <div className='overflow-y-auto max-h-52 min-w-sm max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden auto-hidden-scrollbar truncate' ref={tRef}>
           <nav className='h-full text-black dark:text-gray-300'>
               {/* {nodes.map(node => (
                 <div key={node.id}>

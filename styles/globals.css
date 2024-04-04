@@ -233,3 +233,15 @@ nav {
 .scroll-hidden::-webkit-scrollbar {
   width: 0 !important;
 }
+
+.auto-hidden-scrollbar::-webkit-scrollbar {
+  width: 0.5em; /* 滚动条宽度 */
+}
+
+.auto-hidden-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* 初始状态透明 */
+}
+
+.auto-hidden-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; /* 悬停时显示滚动条 */
+}

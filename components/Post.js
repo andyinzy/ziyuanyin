@@ -25,6 +25,9 @@ export default function Post (props) {
   const BLOG = useConfig()
   const { post, blockMap, emailHash, fullWidth = false } = props
   const { dark } = useTheme()
+  // 创建一个状态来追踪是否存在目录
+  const [hasToc, setHasToc] = React.useState(false);
+
 
   // function isEmptyObject(value) {
   //   console.log('Object is', value);
@@ -75,10 +78,11 @@ export default function Post (props) {
         )}
         <div className="justify-center self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
           {/* {!fullWidth && <div className="flex-1 hidden lg:block" />} */}
-          <div className={fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-4xl px-4 md:px-14 mt-10 bg-white drop-shadow-xl'}>
+          {/* <div className={cn(fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-4xl px-4 md:px-14 ${hasToc ? 'ml-20' : ''} mt-10 bg-white drop-shadow-xl')}> */}
+          <div className={cn(fullWidth ? 'flex-1 pr-4' : `flex-none w-full max-w-4xl px-4 md:px-14 mt-10 bg-white drop-shadow-xl ${hasToc ? 'xl:ml-36 2xl:ml-72' : ''}`)}>
             <NotionRenderer recordMap={blockMap} fullPage={false} darkMode={dark} />
           </div>
-            <LayoutCatalog blockMap={blockMap} />
+            <LayoutCatalog blockMap={blockMap} setHasToc={setHasToc} />
           </div>
       </article>
     </Fade>

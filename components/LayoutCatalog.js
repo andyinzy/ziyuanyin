@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
  * @returns {JSX.Element}
  * @constructor
  */
-export default function LayoutCatalog ({ blockMap }) {
+export default function LayoutCatalog ({ blockMap, setHasToc }) {
   const collectionId = Object.keys(blockMap.collection)[0]
   const page = Object.values(blockMap.block).find(block => block.value.parent_id === collectionId).value
   const nodes = getPageTableOfContents(page, blockMap)
@@ -24,6 +24,13 @@ export default function LayoutCatalog ({ blockMap }) {
       window.removeEventListener('scroll', actionSectionScrollSpy)
     }
   }, [])
+
+  // 检查是否有目录节点，返回给Post.js
+  React.useEffect(() => {
+    const hasTableOfContents  = nodes && nodes.length > 0;
+    setHasToc(hasTableOfContents );
+  }, [nodes, setHasToc]);
+  
 
   // 目录自动滚动
   const tRef = useRef(null)
@@ -135,7 +142,8 @@ export default function LayoutCatalog ({ blockMap }) {
 )}
 
 LayoutCatalog.propTypes = {
-  blockMap: PropTypes.object.isRequired
+  blockMap: PropTypes.object.isRequired,
+  setHasToc: PropTypes.func.isRequired,
 }
 
 // export default Toc

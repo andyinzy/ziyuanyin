@@ -116,7 +116,7 @@
 }
 
 .notion {
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.5;
   color: var(--fg-color);
   caret-color: var(--fg-color);
@@ -1749,7 +1749,7 @@ svg.notion-page-icon {
 
   padding: 6px;
   /* default --- font-size: 14px; */
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.3;
   display: flex;
   align-items: center;

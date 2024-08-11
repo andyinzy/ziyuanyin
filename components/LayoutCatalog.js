@@ -100,7 +100,7 @@ export default function LayoutCatalog ({ blockMap, setHasToc }) {
         </div>
         
     {/* <aside className='font-serif flex-auto ml-4 md:ml-12 mt-10 pl-2 md:pl-5 md:border-l-2 border-gray-200 text-sm text-zinc-700/70 dark:text-neutral-400 select-none' style={style}> */}
-        <div className='overflow-y-auto max-h-52 min-w-sm max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden auto-hidden-scrollbar truncate' ref={tRef}>
+        <div className='auto-hidden-scrollbar max-h-52 min-w-sm max-w-sm lg:max-h-96 overscroll-none scroll-smooth scroll-py-4 scroll-hidden overflow-hidden auto-hidden-scrollbar truncate' ref={tRef}>
           <nav className='h-full text-black dark:text-gray-300'>
               {/* {nodes.map(node => (
                 <div key={node.id}>

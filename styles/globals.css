@@ -262,6 +262,10 @@ nav {
   width: 0 !important;
 }
 
+.auto-hidden-scrollbar {
+  overflow-y: auto; /* 启用垂直滚动 */
+}
+
 .auto-hidden-scrollbar::-webkit-scrollbar {
   width: 0.5em; /* 滚动条宽度 */
 }

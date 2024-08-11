@@ -39,7 +39,7 @@ export default function Post (props) {
 
   return (
     <Fade bottom>
-      <article className={cn('flex flex-col selection:bg-neutral-300 selection:bg-black', fullWidth ? 'md:px-24' : 'items-center')}>
+      <article className={cn('flex flex-col selection:bg-neutral-300 selection:bg-black article-no-select', fullWidth ? 'md:px-24' : 'items-center')}>
         <h1 className={cn(
           'justify-center text-center w-full font-bold text-3xl text-black dark:text-white',
           { 'max-w-2xl px-4': !fullWidth }

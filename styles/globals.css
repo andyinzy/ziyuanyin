@@ -242,8 +242,13 @@ nav {
 }
 */
 
+/* 主页面卡片的字体间距 */
 .blog-post-card {
   letter-spacing: 0.1em;
+}
+/* 让文章不能被选中文字和内容 */
+.article-no-select {
+  user-select: none;
 }
 
 /* 隐藏滚动条 */

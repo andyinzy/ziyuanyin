@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
+
+/* 引入外部字体 */
+@import url('https://static.zeoseven.com/cn/70/main/result.css');
+
+/* 记得在const.js中修改引入的字体 */
+
+/* 不再引入IBM Plex */
+/* @font-face {
   font-family: 'IBM Plex Sans';
   font-weight: 100 900;
   font-display: swap;
@@ -17,7 +24,7 @@
   font-style: italic;
   font-named-instance: 'Italic';
   src: url('/fonts/IBMPlexSansVar-Italic.woff2') format('woff2');
-}
+} */
 
 @font-face {
   font-family: 'Source Serif';
@@ -37,9 +44,18 @@
   src: url('/fonts/SourceSerif-Italic.var.woff2') format('woff2');
 }
 
+@font-face {
+	font-family: "fontcd";
+	src: url('https://static.zeoseven.com/en/cd/main.woff2'),
+	/* 当 CDN 不可用时直接由源服务器提供文件 */
+	url('https://static-host.zeoseven.com/en/cd/main.woff2');
+}
+
 html {
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
+  font-family: "fontcd", "HarmonyOS Sans SC", sans-serif; /* 英文字体在前，中文字体在后 */
+  font-weight: normal;
 }
 body::-webkit-scrollbar {
   width: 5px;
@@ -47,6 +63,9 @@ body::-webkit-scrollbar {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.12em; /* 增加的文字间距 */
 }
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
@@ -222,6 +241,10 @@ nav {
   line-height: 30px;
 }
 */
+
+.blog-post-card {
+  letter-spacing: 0.1em;
+}
 
 /* 隐藏滚动条 */
 .scroll-hidden {

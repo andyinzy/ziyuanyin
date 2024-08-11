@@ -1,5 +1,6 @@
 exports.FONTS_SANS = [
-  '"IBM Plex Sans"',
+  '"fontcd"',          // 英文字体
+  '"HarmonyOS Sans SC"', // 中文字体
   'ui-sans-serif',
   'system-ui',
   '-apple-system',

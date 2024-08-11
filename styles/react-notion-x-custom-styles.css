@@ -653,7 +653,7 @@ svg.notion-page-icon {
   color: inherit;
   word-break: break-word;
   text-decoration: inherit;
-  border-bottom: 0.05em solid;
+  border-bottom: 0.1em solid;   /* default 0.05em */
   border-color: var(--fg-color-2);
   opacity: 0.7;
   transition: border-color 100ms ease-in, opacity 100ms ease-in;
@@ -728,6 +728,7 @@ svg.notion-page-icon {
 
 .notion-inline-underscore {
   text-decoration: underline;
+  text-underline-offset: 0.3em; /* 下划线偏移量 */
 }
 
 .notion-list {
@@ -1735,6 +1736,7 @@ svg.notion-page-icon {
   position: relative;
   color: var(--fg-color);
   opacity: 0.7;
+  letter-spacing: 0.06em; /* 目录的字体间距 */
   transition: background 100ms ease-in, opacity 100ms ease-in;
 
   text-decoration: none;

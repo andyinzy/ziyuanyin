@@ -2612,18 +2612,18 @@ svg.notion-page-icon {
 }
 
 .notion-simple-table {
-  border: 1px solid var(--fg-color-5);
+  border: 2px solid #767676;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 14px;
 }
 
 .notion-simple-table tr:first-child td {
-  background: var(--bg-color-0);
+  background: #76767636;
 }
 
 .notion-simple-table td {
-  border: 1px solid var(--fg-color-5);
+  border: 2px solid #767676;
   padding: 8px 8px;
   white-space: pre-wrap;
 }

@@ -21,6 +21,7 @@ const Scripts = () => {
       .then(() => console.log('Font loaded'))
       .catch(err => console.error('Error loading font:', err));
   }, []); // 空数组表示只在组件挂载时运行一次
+  
   return (
     <>
       {BLOG.analytics && BLOG.analytics.provider === 'ackee' && (

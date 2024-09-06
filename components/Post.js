@@ -37,7 +37,7 @@ export default function Post (props) {
   //   return Object.keys(value).length === 0;
   // }
   useEffect(() => {
-    const timer = setTimeout(() => setShowAnimation(true), 100);
+    const timer = setTimeout(() => setShowAnimation(true), 50);
     return () => clearTimeout(timer);
   }, []);
 

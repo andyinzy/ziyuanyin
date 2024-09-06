@@ -68,17 +68,6 @@ export default function Header ({ navBarTitle, fullWidth }) {
     }
   }, [handler, sentinelRef])
 
-  // // 添加 window.onload 监听器
-  // useEffect(() => {
-  //   window.onload = function() {
-  //     // 动画效果，例如延迟加载完成后执行动画
-  //     document.querySelectorAll('.notion-collection-view-dropdown-content').forEach(el => {
-  //       el.style.animation = 'slideDownAndFade 1s ease-in-out forwards';
-  //       el.style.opacity = '1'; // 确保动画执行时元素可见
-  //     });
-  //   };
-  // }, [])
-
   const titleRef = useRef(/** @type {HTMLParagraphElement} */ undefined)
 
   function handleClickHeader (/** @type {MouseEvent} */ ev) {

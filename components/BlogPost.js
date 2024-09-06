@@ -11,7 +11,7 @@ const BlogPost = ({ post }) => {
   const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowAnimation(true), 100);
+    const timer = setTimeout(() => setShowAnimation(true), 50);
     return () => clearTimeout(timer);
   }, []);
   

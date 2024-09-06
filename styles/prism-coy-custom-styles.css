@@ -9,7 +9,7 @@ pre[class*="language-"] {
 	color: black;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: .8rem;
+	font-size: 1.05rem;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -41,7 +41,7 @@ box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
 pre[class*="language-"] > code {
 	position: relative;
 	z-index: 1;
-	border-left: 10px solid #e2e2e2;
+	border-left: 10px solid #76767676;
 	box-shadow: -1px 0px 0px 0px #e2e2e2, 0px 0px 0px 1px #dfdfdf;
 	background-color: #fdfdfd;
 	background-image: linear-gradient(transparent 50%, rgba(108, 108, 108, 0.04) 50%);
@@ -53,7 +53,7 @@ pre[class*="language-"] > code {
 code[class*="language-"] {
 	max-height: inherit;
 	height: inherit;
-	padding: 0 1em;
+	padding: 1em 1em;
 	display: block;
 	overflow: auto;
 }
@@ -79,7 +79,7 @@ pre[class*="language-"] {
 	white-space: normal;
 }
 
-pre[class*="language-"]:before,
+/* pre[class*="language-"]:before,
 pre[class*="language-"]:after {
 	content: '';
 	display: block;
@@ -105,7 +105,7 @@ pre[class*="language-"]:after {
 	-ms-transform: rotate(2deg);
 	-o-transform: rotate(2deg);
 	transform: rotate(2deg);
-}
+} */
 
 .token.comment,
 .token.block-comment,

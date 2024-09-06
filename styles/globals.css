@@ -53,12 +53,13 @@
 
 html {
   --scrollbarBG: #ffffff00;
-  --thumbBG: #b8b8b8;
+  --thumbBG: #e0e0e0;
   font-family: "fontcd", "HarmonyOS Sans SC", sans-serif; /* 英文字体在前，中文字体在后 */
   font-weight: normal;
 }
 body::-webkit-scrollbar {
-  width: 5px;
+  /* width: 5px; */
+  scrollbar-width: thin;
 }
 body {
   scrollbar-width: thin;
@@ -72,7 +73,12 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--thumbBG);
+  border-radius: 10px; /* 滚动条的圆角 */
 }
+body::-webkit-scrollbar-button {
+  background: transparent;
+}
+
 
 ::selection {
   background: rgba(45, 170, 219, 0.3);
@@ -276,4 +282,21 @@ nav {
 
 .auto-hidden-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: #a0a0a0; /* 悬停时显示滚动条 */
+}
+
+
+/* 主页文章卡片阴影 */
+.custom-shadow {
+   /*https://getcssscan.com/css-box-shadow-examples #1  */
+   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.custom-hover-shadow:hover {
+  /*https://getcssscan.com/css-box-shadow-examples #10  */
+  box-shadow: rgb(76, 76, 76) 0px 20px 30px -10px;
+}
+
+.custom-tag-hover-shadow:hover {
+  /*https://getcssscan.com/css-box-shadow-examples #10  */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

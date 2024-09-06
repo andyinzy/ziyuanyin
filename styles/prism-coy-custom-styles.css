@@ -29,54 +29,48 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	position: relative;
-	margin: .5em 0;
-	overflow: visible;
-	padding: 1px;
-}
-/* default color:
-border-left: 10px solid #358ccb;
-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-*/
-pre[class*="language-"] > code {
-	position: relative;
-	z-index: 1;
-	border-left: 10px solid #76767676;
-	box-shadow: -1px 0px 0px 0px #e2e2e2, 0px 0px 0px 1px #dfdfdf;
-	background-color: #fdfdfd;
-	background-image: linear-gradient(transparent 50%, rgba(108, 108, 108, 0.04) 50%);
-	background-size: 3em 3em;
-	background-origin: content-box;
-	background-attachment: local;
+    position: relative;
+    margin: .5em 0;
+    padding: 1px;
+	overflow-x: hidden; /* 默认隐藏横向滚动条 */
+    overflow-y: hidden; /* 始终隐藏纵向滚动条 */
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  	border-radius: 4px;
 }
 
+/* 控制 code 内部的滚动 */
 code[class*="language-"] {
-	max-height: inherit;
-	height: inherit;
-	padding: 1em 1em;
-	display: block;
-	overflow: auto;
+    max-height: inherit;
+    height: inherit;
+    padding: 1.2em 5em 1.2em 1em;
+    display: block;
+    overflow-x: auto; /* 默认隐藏横向滚动条 */
+    overflow-y: hidden; /* 始终隐藏纵向滚动条 */
+    scrollbar-width: thin; /* 对于支持的浏览器，选择滚动条宽度 */
 }
 
-/* Margin bottom to accommodate shadow */
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background-color: #fdfdfd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	margin-bottom: 1em;
+/* 代码块样式 */
+pre[class*="language-"] > code {
+    position: relative;
+    z-index: 1;
+    border-left: 10px solid #767676;
+    box-shadow: -1px 0px 0px 0px #e2e2e2, 0px 0px 0px 1px #dfdfdf;
+    background-color: #fdfdfd;
+    background-image: linear-gradient(transparent 50%, rgba(108, 108, 108, 0.04) 50%);
+    background-size: 3em 3em;
+    background-origin: content-box;
+    background-attachment: local;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	position: relative;
-	padding: .2em;
-	border-radius: 0.3em;
-	color: #c92c2c;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	display: inline;
-	white-space: normal;
+    position: relative;
+    padding: .2em;
+    border-radius: 0.3em;
+    color: #c92c2c;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline;
+    white-space: normal;
 }
 
 /* pre[class*="language-"]:before,

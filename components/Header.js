@@ -22,7 +22,7 @@ const NavBar = () => {
             link.show && (
               <li
                 key={link.id}
-                className="px-2 py-1.5 block ml-1 md:ml-4 rounded-lg text-gray-600 transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:text-gray-800 hover:border-gray-300 hover:shadow-lg dark:text-gray-50 nav"
+                className="px-2 py-1.5 block ml-1 md:ml-4 rounded-lg text-gray-600 transition duration-300 ease-in-out hover:bg-white hover:rounded-lg hover:text-gray-800 custom-hover-shadow dark:text-gray-50 nav"
               >
                 <Link href={link.to} target={link.external ? '_blank' : null}>{link.name}</Link>
               </li>
@@ -43,11 +43,9 @@ export default function Header ({ navBarTitle, fullWidth }) {
   const [favicon, _setFavicon] = useState(resolveFavicon())
   const setFavicon = fallback => _setFavicon(resolveFavicon(fallback))
 
-  useEffect(
-    () => setFavicon(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dark]
-  )
+  useEffect(() => {
+    setFavicon();
+  }, [setFavicon]);  // 将 setFavicon 添加到依赖数组
 
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(/** @type {HTMLDivElement} */ undefined)
@@ -69,6 +67,17 @@ export default function Header ({ navBarTitle, fullWidth }) {
       sentinelEl && observer.unobserve(sentinelEl)
     }
   }, [handler, sentinelRef])
+
+  // // 添加 window.onload 监听器
+  // useEffect(() => {
+  //   window.onload = function() {
+  //     // 动画效果，例如延迟加载完成后执行动画
+  //     document.querySelectorAll('.notion-collection-view-dropdown-content').forEach(el => {
+  //       el.style.animation = 'slideDownAndFade 1s ease-in-out forwards';
+  //       el.style.opacity = '1'; // 确保动画执行时元素可见
+  //     });
+  //   };
+  // }, [])
 
   const titleRef = useRef(/** @type {HTMLParagraphElement} */ undefined)
 

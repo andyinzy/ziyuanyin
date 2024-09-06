@@ -2838,6 +2838,9 @@ svg.notion-page-icon {
 
 .notion-collection-view-dropdown-content[data-state='open'] {
   animation-name: slideDownAndFade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s; /* 设置 1 秒延迟，页面加载完毕后再开始动画 */
 }
 
 .nested-form-link {

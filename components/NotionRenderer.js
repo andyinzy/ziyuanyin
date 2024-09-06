@@ -5,6 +5,7 @@ import { getTextContent } from 'notion-utils'
 import { FONTS_SANS, FONTS_SERIF } from '@/consts'
 import { useConfig } from '@/lib/config'
 import Toggle from '@/components/notion-blocks/Toggle'
+import { loadExternalResource } from '@/lib/utils';
 
 // Lazy-load some heavy components & override the renderers of some block types
 const components = {
@@ -27,6 +28,7 @@ const components = {
               return import('react-notion-x/build/third-party/code').then(async module => {
                 // Additional prismjs syntax
                 await Promise.all([
+                  loadExternalResource('https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css', 'css'),
                   import('prismjs/components/prism-markup-templating'),
                   import('prismjs/components/prism-markup'),
                   import('prismjs/components/prism-bash'),
@@ -90,7 +92,6 @@ const components = {
   }),
 
   /* Overrides */
-
   toggle_nobelium: ({ block, children }) => (
     <Toggle block={block}>{children}</Toggle>
   )

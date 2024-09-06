@@ -9,6 +9,7 @@ import NotionRenderer from '@/components/NotionRenderer'
 import LayoutCatalog from '@/components/LayoutCatalog'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import { useState, useEffect } from 'react';
 
 /**
  * A post renderer
@@ -27,8 +28,8 @@ export default function Post (props) {
   const { dark } = useTheme()
   // 创建一个状态来追踪是否存在目录
   const [hasToc, setHasToc] = React.useState(false);
-
-
+  // 添加状态来控制动画的显示
+  const [showAnimation, setShowAnimation] = useState(false);
   // function isEmptyObject(value) {
   //   console.log('Object is', value);
   //   console.log('Is Object equals null', value===null);
@@ -36,9 +37,13 @@ export default function Post (props) {
   //   console.log('Object value.constructor === Object', value.constructor === Object);
   //   return Object.keys(value).length === 0;
   // }
+  useEffect(() => {
+    const timer = setTimeout(() => setShowAnimation(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <Fade bottom>
+    <Fade bottom when={showAnimation}>
       <article className={cn('flex flex-col selection:bg-neutral-300 selection:bg-black article-no-select', fullWidth ? 'md:px-24' : 'items-center')}>
         <h1 className={cn(
           'justify-center text-center w-full font-bold text-3xl text-black dark:text-white',

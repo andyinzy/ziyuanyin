@@ -67,6 +67,7 @@ export default function LayoutCatalog ({ blockMap, setHasToc }) {
     tRef?.current?.scrollTo({ top , behavior: 'smooth' })
   }, throttleMs))
 
+
   // 无目录就直接返回空
   if (!nodes.length) {
     ifSideRender = false

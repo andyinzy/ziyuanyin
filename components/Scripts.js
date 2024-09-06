@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { useConfig } from '@/lib/config'
 import { loadExternalResource } from '@/lib/utils';
+import {useEffect} from 'react'
 
 const Scripts = () => {
   const BLOG = useConfig()

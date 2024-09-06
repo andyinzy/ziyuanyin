@@ -10,7 +10,6 @@ import LayoutCatalog from '@/components/LayoutCatalog'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import { useState, useEffect } from 'react';
-
 /**
  * A post renderer
  *

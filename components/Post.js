@@ -82,8 +82,8 @@ export default function Post (props) {
         )}
         <div className="justify-center self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
           {/* {!fullWidth && <div className="flex-1 hidden lg:block" />} */}
-          {/* <div className={cn(fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-4xl px-4 md:px-14 ${hasToc ? 'ml-20' : ''} mt-10 bg-white drop-shadow-xl')}> */}
-          <div className={cn(fullWidth ? 'flex-1 pr-4' : `flex-none w-full max-w-4xl px-4 md:px-14 mt-10 bg-white drop-shadow-xl ${hasToc ? 'xl:ml-36 2xl:ml-72' : ''}`)}>
+          {/* <div className={cn(fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-4xl px-4 md:px-20 ${hasToc ? 'ml-20' : ''} mt-10 bg-white drop-shadow-xl')}> */}
+          <div className={cn(fullWidth ? 'flex-1 pr-4' : `flex-none w-full max-w-4xl px-4 md:px-20 mt-10 bg-white drop-shadow-xl ${hasToc ? 'xl:ml-36 2xl:ml-72' : ''}`)}>
             <NotionRenderer recordMap={blockMap} fullPage={false} darkMode={dark} />
           </div>
             <LayoutCatalog blockMap={blockMap} setHasToc={setHasToc} />

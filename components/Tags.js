@@ -19,7 +19,7 @@ const Tags = ({ tags, currentTag }) => {
               <Link
                 key={key}
                 href={selected ? '/search' : `/tag/${encodeURIComponent(key)}`}
-                className="px-2 py-1 block custom-rsch-tag-hover-shadow"
+                className="px-2 py-1 block rounded-lg custom-rsch-tag-hover-shadow"
               >
                 {`${key} (${tags[key]})`}
               </Link>

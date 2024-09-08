@@ -308,12 +308,19 @@ nav {
   transition: all 300ms ease-in-out;
 }
 
+.custom-rsch-tag-hover-shadow {
+  background-color: transparent; /* 默认背景为透明 */
+  box-shadow: none; /* 默认无阴影 */
+  border-radius: 0.5rem; /* 保持 hover 时圆角效果 */
+  transition: all 300ms ease-in-out;
+}
+
 .custom-rsch-tag-hover-shadow:hover {
   /*https://getcssscan.com/css-box-shadow-examples #10  */
   background-color: white; /* 保持 hover 时背景为白色 */
   box-shadow: inset 0 -1px 2px rgba(0,0,0,.17),inset 0 -3px 6px rgba(0,0,0,.15),inset 0 -9px 5px 0 rgba(0,0,0,.1),0 2px 1px rgba(0,0,0,.16),0 4px 2px rgba(0,0,0,.14),0 8px 4px rgba(0,0,0,.12),0 16px 8px rgba(0,0,0,.1),0 18px 16px rgba(0,0,0,.08);
   /* 较轻的阴影效果，避免遮盖按钮 */
-  border-radius: 0.6rem; /* 保持 hover 时圆角效果 */
+  border-radius: 0.5rem; /* 保持 hover 时圆角效果 */
   color: #1f2937; /* 灰色 (#1f2937) 字体，等同于 text-gray-800 */
   transition: all 300ms ease-in-out;
 }
@@ -323,14 +330,20 @@ nav {
   background-color: white; /* 保持 hover 时背景为白色 */
   box-shadow: inset 0 -1px 2px rgba(0,0,0,.17),inset 0 -3px 6px rgba(0,0,0,.15),inset 0 -9px 5px 0 rgba(0,0,0,.1),0 2px 1px rgba(0,0,0,.16),0 4px 2px rgba(0,0,0,.14),0 8px 4px rgba(0,0,0,.12),0 16px 8px rgba(0,0,0,.1),0 18px 16px rgba(0,0,0,.08);
   /* 较轻的阴影效果，避免遮盖按钮 */
-  border-radius: 0.6rem; /* 保持 hover 时圆角效果 */
+  border-radius: 0.5rem; /* 保持 hover 时圆角效果 */
   color: #1f2937; /* 灰色 (#1f2937) 字体，等同于 text-gray-800 */
+}
+
+.custom-page-tag-hover-shadow {
+  background-color: transparent; /* 默认背景为透明 */
+  box-shadow: none; /* 默认无阴影 */
+  transition: all 300ms ease-in-out;
 }
 
 .custom-page-tag-hover-shadow:hover {
   /*https://getcssscan.com/css-box-shadow-examples #10  */
   background-color: white; /* 保持 hover 时背景为白色 */
-  box-shadow: inset 0 -1px 2px rgba(0,0,0,.17),inset 0 -3px 6px rgba(0,0,0,.15),inset 0 -9px 5px 0 rgba(0,0,0,.1),0 2px 1px rgba(0,0,0,.16),0 4px 2px rgba(0,0,0,.14),0 8px 4px rgba(0,0,0,.12),0 16px 8px rgba(0,0,0,.1),0 32px 16px rgba(0,0,0,.08);
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,.17),inset 0 -3px 6px rgba(0,0,0,.15),inset 0 -9px 5px 0 rgba(0,0,0,.1),0 2px 1px rgba(0,0,0,.16),0 4px 2px rgba(0,0,0,.14),0 8px 4px rgba(0,0,0,.12),0 8px 5px rgba(0,0,0,.1),0 12px 7px rgba(0,0,0,.08);
   /* 较轻的阴影效果，避免遮盖按钮 */
   border-radius: 0.75rem; /* 保持 hover 时圆角效果 */
   color: #1f2937; /* 灰色 (#1f2937) 字体，等同于 text-gray-800 */

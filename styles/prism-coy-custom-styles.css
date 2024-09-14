@@ -161,11 +161,11 @@ pre[class*="language-"]:after {
 }
 
 .token.important {
-	font-weight: normal;
+	font-weight: 400;
 }
 
 .token.bold {
-	font-weight: bold;
+	font-weight: 600;
 }
 .token.italic {
 	font-style: italic;

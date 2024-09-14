@@ -710,7 +710,7 @@ svg.notion-page-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.3;
   border-bottom: 1px solid var(--fg-color-1);
   margin: 4px 0;
@@ -1290,7 +1290,7 @@ svg.notion-page-icon {
 }
 
 .notion-table-cell-title {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .notion-table-cell-text {
@@ -1492,7 +1492,7 @@ svg.notion-page-icon {
 
 .notion-collection-card-property:first-child {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .notion-collection-card-property:not(:first-child) {
@@ -1543,7 +1543,7 @@ svg.notion-page-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -1628,7 +1628,7 @@ svg.notion-page-icon {
 
 .notion-board-th-count {
   color: var(--fg-color-3);
-  font-weight: 500;
+  font-weight: 600;
   padding: 0 8px;
 }
 
@@ -2086,7 +2086,7 @@ svg.notion-page-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* removes double underline with links */
@@ -2522,7 +2522,7 @@ svg.notion-page-icon {
 
 .notion-search .noResults {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   color: rgba(55, 53, 47, 0.6);
 }
@@ -2547,7 +2547,7 @@ svg.notion-page-icon {
 }
 
 .notion-search .resultsCount {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--fg-color-3);
 }
 
@@ -2682,7 +2682,7 @@ svg.notion-page-icon {
 
 .notion-external-title {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--fg-color-4);
 }
 

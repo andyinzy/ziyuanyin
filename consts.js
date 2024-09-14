@@ -1,6 +1,6 @@
 exports.FONTS_SANS = [
-  '"fontcd"',          // 英文字体
-  '"HarmonyOS Sans SC"', // 中文字体
+  '"SF Pro Text"',      // 优先用于英文字体
+  '"PingFang SC"',      // 优先用于中文字体
   'ui-sans-serif',
   'system-ui',
   '-apple-system',

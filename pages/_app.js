@@ -11,6 +11,7 @@ import { LocaleProvider } from '@/lib/locale'
 import { prepareDayjs } from '@/lib/dayjs'
 import { ThemeProvider } from '@/lib/theme'
 import Scripts from '@/components/Scripts'
+import BackgroundPattern from '@/components/BackgroundPattern'
 
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
@@ -22,6 +23,7 @@ export default function MyApp ({ Component, pageProps, config, locale }) {
       <LocaleProvider value={locale}>
         <ThemeProvider>
           <>
+            <BackgroundPattern /> {/* components/BackgroundPattern.js 背景小圆点 */}
             {process.env.VERCEL_ENV === 'production' && config?.analytics?.provider === 'ackee' && (
               <Ackee
                 ackeeServerUrl={config.analytics.ackeeConfig.dataAckeeServer}
